@@ -1,7 +1,7 @@
 (* ::Package:: *)
+Get[FileNameJoin[{NotebookDirectory[], "racah.m"}]]
+Get[FileNameJoin[{NotebookDirectory[], "stats.m"}]]
 
-<<Documents/mathematica/racah.m
-<<Documents/mathematica/stats.m
 
 (*** Single-j CFPs in a seniority basis ***)
 (* Must be read in from shells.m or ibm.m *)
@@ -213,3 +213,6 @@ Do[Jn=Jns[[in,1]];
          Print["!!!bra=",bn[[in1,1]]," & !!!ket=",bn[[in2,1]],": ",redsqrtrat[s]]],
       {in1,1,Length[bn]},{in2,1,Length[bn]}],
    {in,1,Length[Jns]}]];
+
+
+

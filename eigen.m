@@ -2,17 +2,14 @@
 
 (* Normalised eigenvectors; eigenvalues ordered *)
 eigensystem[m_]:=
-Block[{eig,eigval,eigvec,i,j,x,y},
-eig=Eigensystem[m];
-eigval=Chop[eig[[1]]];
-eigvec=Chop[eig[[2]]];
-Do[eigvec[[i]]=Chop[eigvec[[i]]/Sqrt[eigvec[[i]] . eigvec[[i]]]],{i,1,Length[m]}];
-Do[Do[If[eigval[[i]]>eigval[[i+1]],
-         x=eigval[[i]];eigval[[i]]=eigval[[i+1]];eigval[[i+1]]=x;
-         y=eigvec[[i]];eigvec[[i]]=eigvec[[i+1]];eigvec[[i+1]]=y,Null],
-      {i,1,Length[m]-1}],
-   {j,1,Length[m]}];
-{eigval,eigvec}];
+Block[{eig, eigval, eigvec, order},
+  eig = Eigensystem[N[m]];
+  eigval = Chop[eig[[1]]];
+  eigvec = Map[Chop[# / Sqrt[# . #]] &, eig[[2]]];
+  order = Ordering[eigval];
+  {eigval[[order]], eigvec[[order]]}
+];
+
 eigenvalues[m_]:=eigensystem[m][[1]];
 
 (* Normalised eigenvectors *)
