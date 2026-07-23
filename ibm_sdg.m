@@ -1,6 +1,5 @@
 (* ::Package:: *)
-
-<<Documents/mathematica/ibm.m
+Get[FileNameJoin[{NotebookDirectory[], "ibm.m"}]]
 
 (*** Interacting boson model with s, d and g bosons ***)
 (** Definition of acb coefficients in sdg-IBM *)

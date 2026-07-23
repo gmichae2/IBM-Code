@@ -1,9 +1,10 @@
 (* ::Package:: *)
 
-<<Documents/mathematica/cfpsen.m
-<<Documents/mathematica/eigen.m
-<<Documents/mathematica/young.m
-(*<<Documents/mathematica/ibmcl.m*)
+Get[FileNameJoin[{NotebookDirectory[], "cfpsen.m"}]]
+Get[FileNameJoin[{NotebookDirectory[], "eigen.m"}]]
+Get[FileNameJoin[{NotebookDirectory[], "young.m"}]]
+
+(*<</home/gavin/NotreDame/IBM Related/IBM code/ibmcl.m*)
 
 (*** Interacting boson model for (l1+l2+...+lp)^Nb bosons ***)
 
